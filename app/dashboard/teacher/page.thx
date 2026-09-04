@@ -3,11 +3,10 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Scanner } from '@yudiel/react-qr-scanner';
 
-
 // === 1. นำเข้า Firebase ===
-import { db, auth } from '../../lib/firebase';
+import { db, auth } from '../lib/firebase';
 import { doc, getDoc, updateDoc, arrayUnion, onSnapshot, collection, query, where, getDocs, orderBy } from 'firebase/firestore';
-import { signOut } from 'firebase/auth'; // เพิ่ม signOut
+import { signOut } from 'firebase/auth';
 
 interface UserDataType {
   name: string;
@@ -32,7 +31,7 @@ export default function StudentDashboard() {
 
   // === State ประวัติการเรียนจาก Firebase ===
   const [selectedDate, setSelectedDate] = useState<number | null>(null);
-  const [historyData, setHistoryData] = useState<any[]>([]); // เก็บประวัติของจริง
+  const [historyData, setHistoryData] = useState<any[]>([]);
 
   const [calendarDate, setCalendarDate] = useState(new Date());
 
@@ -128,11 +127,9 @@ export default function StudentDashboard() {
           
           snap.docs.forEach(docSnap => {
             const data = docSnap.data();
-            // หานักศึกษาคนนี้ในรายการ studentsData ของคลาสนี้
             const myRecord = data.studentsData?.find((s: any) => s.studentId === userData.userId);
             
             if (myRecord) {
-              // เช็คว่าออฟไลน์ตอนอาจารย์ยุบห้องไหม (เกิน 60 วินาที)
               const lastSeenTime = myRecord.lastSeen ? new Date(myRecord.lastSeen).getTime() : 0;
               const classEndTime = new Date(data.timestamp).getTime();
               const isOffline = (classEndTime - lastSeenTime) > 60000;
@@ -141,7 +138,7 @@ export default function StudentDashboard() {
               
               myRecords.push({
                 id: docSnap.id,
-                day: dateObj.getDate(), // ดึงแค่วันที่มาใช้กับปฏิทิน
+                day: dateObj.getDate(),
                 dateStr: data.dateStr,
                 code: data.courseCode,
                 name: data.courseName,
@@ -195,7 +192,7 @@ export default function StudentDashboard() {
         lat: myLocation.lat,
         lng: myLocation.lng,
         joinTime: new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }),
-        lastSeen: new Date().toISOString() // เพิ่ม lastSeen ครั้งแรกตอนกดเข้าห้อง
+        lastSeen: new Date().toISOString()
       };
 
       await updateDoc(roomRef, {
@@ -464,7 +461,7 @@ export default function StudentDashboard() {
                 </div>
 
                 <div className="lg:col-span-2 bg-[#161925] border border-gray-800 rounded-3xl p-8 shadow-2xl relative flex flex-col">
-                  <div className="absolute top-0 left-0 w-full h-1bg-linear-to-r from-emerald-500 to-teal-400"></div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
                   <div className="flex justify-between items-start mb-8">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
@@ -554,9 +551,9 @@ export default function StudentDashboard() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                <div className="bg-[#161925] border border-gray-800 p-6 rounded-2xl text-center shadow-lg"><p className="text-gray-400 text-sm mb-1">เข้าเรียนทั้งหมด</p><p className="text-3xl font-bold text-white">{totalClasses} <span className="text-sm font-normal text-gray-500">คาบ</span></p></div>
-               <div className="bg-emerald-500/5 border border-emerald-500/30 p-6 rounded-2xl text-center shadow-lg"><p className="text-emerald-500/80 text-sm mb-1">อยู่จนจบ (เขียว)</p><p className="text-3xl font-bold text-emerald-400">{successClasses} <span className="text-sm font-normal text-emerald-500/50">คาบ</span></p></div>
-               <div className="bg-yellow-500/5 border border-yellow-500/30 p-6 rounded-2xl text-center shadow-lg"><p className="text-yellow-500/80 text-sm mb-1">แอบปิดแอป (เหลือง)</p><p className="text-3xl font-bold text-yellow-400">{warningClasses} <span className="text-sm font-normal text-yellow-500/50">คาบ</span></p></div>
-               <div className="bg-red-500/5 border border-red-500/30 p-6 rounded-2xl text-center shadow-lg"><p className="text-red-500/80 text-sm mb-1">ขาดเรียน (แดง)</p><p className="text-3xl font-bold text-red-400">{errorClasses} <span className="text-sm font-normal text-red-500/50">คาบ</span></p></div>
+               <div className="bg-[#161925] border border-emerald-500/30 p-6 rounded-2xl text-center shadow-lg bg-emerald-500/5"><p className="text-emerald-500/80 text-sm mb-1">อยู่จนจบ (เขียว)</p><p className="text-3xl font-bold text-emerald-400">{successClasses} <span className="text-sm font-normal text-emerald-500/50">คาบ</span></p></div>
+               <div className="bg-[#161925] border border-yellow-500/30 p-6 rounded-2xl text-center shadow-lg bg-yellow-500/5"><p className="text-yellow-500/80 text-sm mb-1">แอบปิดแอป (เหลือง)</p><p className="text-3xl font-bold text-yellow-400">{warningClasses} <span className="text-sm font-normal text-yellow-500/50">คาบ</span></p></div>
+               <div className="bg-[#161925] border border-red-500/30 p-6 rounded-2xl text-center shadow-lg bg-red-500/5"><p className="text-red-500/80 text-sm mb-1">ขาดเรียน (แดง)</p><p className="text-3xl font-bold text-red-400">{errorClasses} <span className="text-sm font-normal text-red-500/50">คาบ</span></p></div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
