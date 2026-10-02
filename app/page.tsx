@@ -80,7 +80,7 @@ export default function LoginPage() {
       <div className="bg-[#161925] border border-gray-800 p-8 rounded-3xl shadow-2xl w-full max-w-md animate-fadeIn">
         
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-black text-emerald-400 mb-2">Classroom System</h1>
+          <h1 className="text-3xl font-black text-blue-400 mb-2">Classroom System</h1>
           <p className="text-gray-400 text-sm">ระบบจัดการห้องเรียนและเช็คชื่อเข้าเรียน</p>
         </div>
 
@@ -99,7 +99,7 @@ export default function LoginPage() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 transition-colors"
+                className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors"
                 placeholder="สมชาย ใจดี"
               />
             </div>
@@ -112,7 +112,7 @@ export default function LoginPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 transition-colors"
+              className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors"
               placeholder="example@email.com"
             />
           </div>
@@ -124,7 +124,7 @@ export default function LoginPage() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 transition-colors"
+              className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors"
               placeholder="••••••••"
             />
           </div>
@@ -135,7 +135,7 @@ export default function LoginPage() {
               <div className="flex gap-4">
                 <label className="flex-1 cursor-pointer">
                   <input type="radio" name="role" value="student" checked={role === "student"} onChange={(e) => setRole(e.target.value)} className="hidden peer" />
-                  <div className="text-center p-3 rounded-xl border border-gray-700 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 transition-all text-sm font-bold">
+                  <div className="text-center p-3 rounded-xl border border-gray-700 peer-checked:border-blue-500 peer-checked:bg-blue-500/10 transition-all text-sm font-bold">
                     👨‍🎓 นักศึกษา
                   </div>
                 </label>
@@ -152,7 +152,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-800 text-white font-bold py-4 rounded-xl shadow-lg shadow-emerald-500/20 transition-all mt-4"
+            className="w-full bg-blue-600 hover:bg-blue-500 disabled:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 transition-all mt-4"
           >
             {loading ? "กำลังโหลด..." : isLogin ? "เข้าสู่ระบบ" : "สมัครสมาชิก"}
           </button>
@@ -160,7 +160,7 @@ export default function LoginPage() {
 
         <div className="mt-6 text-center text-sm text-gray-500">
           {isLogin ? "ยังไม่มีบัญชีใช่ไหม? " : "มีบัญชีอยู่แล้วใช่ไหม? "}
-          <button onClick={() => setIsLogin(!isLogin)} className="text-emerald-400 hover:text-emerald-300 font-bold underline">
+          <button onClick={() => setIsLogin(!isLogin)} className="text-blue-400 hover:text-blue-300 font-bold underline">
             {isLogin ? "สมัครสมาชิกที่นี่" : "เข้าสู่ระบบเลย"}
           </button>
         </div>
