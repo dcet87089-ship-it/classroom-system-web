@@ -296,9 +296,9 @@ export default function StudentDashboard() {
   let distTextColor = "";
 
   if (dist <= 50) {
-      statusColor = "bg-blue-500/20 text-blue-400 border-blue-500/30";
+      statusColor = "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
       statusMessage = "✅ ระยะปลอดภัย (สถานะ: เข้าเรียน)";
-      distTextColor = "text-blue-400";
+      distTextColor = "text-emerald-400";
   } else if (dist <= 100) {
       statusColor = "bg-yellow-500/20 text-yellow-400 border-yellow-500/30";
       statusMessage = "⚠️ คุณเริ่มออกห่างจากห้องเรียน (สถานะ: เฝ้าระวัง)";
@@ -331,20 +331,20 @@ export default function StudentDashboard() {
               ✕
             </button>
             
-            <h2 className="text-2xl font-bold text-blue-400 mb-6">เพิ่มวิชาเรียน</h2>
+            <h2 className="text-2xl font-bold text-emerald-400 mb-6">เพิ่มวิชาเรียน</h2>
 
             <form onSubmit={handleSaveCourse} className="space-y-4">
               <div>
                 <label className="text-sm font-semibold text-gray-300 mb-2 block">รหัสวิชา</label>
-                <input name="code" placeholder="เช่น CPE101" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-blue-500" required />
+                <input name="code" placeholder="เช่น CPE101" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-emerald-500" required />
               </div>
               <div>
                 <label className="text-sm font-semibold text-gray-300 mb-2 block">ชื่อวิชา</label>
-                <input name="name" placeholder="เช่น Computer Programming" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-blue-500" required />
+                <input name="name" placeholder="เช่น Computer Programming" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-emerald-500" required />
               </div>
               <div>
                 <label className="text-sm font-semibold text-gray-300 mb-2 block">วันเรียน</label>
-                <select name="day" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-blue-500 text-white cursor-pointer" required>
+                <select name="day" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-emerald-500 text-white cursor-pointer" required>
                   <option value="Monday">วันจันทร์ (Monday)</option>
                   <option value="Tuesday">วันอังคาร (Tuesday)</option>
                   <option value="Wednesday">วันพุธ (Wednesday)</option>
@@ -355,15 +355,15 @@ export default function StudentDashboard() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-semibold text-gray-300 mb-2 block">เวลา</label>
-                  <input name="time" placeholder="เช่น 09:00 - 12:00" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-blue-500" />
+                  <input name="time" placeholder="เช่น 09:00 - 12:00" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-emerald-500" />
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-gray-300 mb-2 block">สถานที่</label>
-                  <input name="location" placeholder="เช่น อาคารอำนวยการ" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-blue-500" />
+                  <input name="location" placeholder="เช่น อาคารอำนวยการ" className="w-full p-4 rounded-xl bg-[#1e2233] border border-gray-700 focus:outline-none focus:border-emerald-500" />
                 </div>
               </div>
 
-              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-xl font-bold text-lg mt-6 shadow-lg shadow-blue-500/30 transition-all">
+              <button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-500 text-white p-4 rounded-xl font-bold text-lg mt-6 shadow-lg shadow-emerald-500/30 transition-all">
                 บันทึกตารางเรียน
               </button>
             </form>
@@ -373,20 +373,20 @@ export default function StudentDashboard() {
 
       {/* Sidebar */}
       <div className="w-64 bg-[#161925] p-6 border-r border-gray-800 flex flex-col z-10">
-        <h1 className="text-xl font-bold text-blue-400 mb-8">เมนูนักศึกษา</h1>
+        <h1 className="text-xl font-bold text-emerald-400 mb-8">เมนูนักศึกษา</h1>
         <div className="space-y-4 flex-1">
-          <button onClick={() => setActiveMenu('home')} className={`w-full text-left p-3 rounded-lg font-medium transition-all flex items-center gap-3 ${activeMenu === 'home' ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20' : 'text-gray-400 hover:bg-[#1e2233] hover:text-white'}`}>
+          <button onClick={() => setActiveMenu('home')} className={`w-full text-left p-3 rounded-lg font-medium transition-all flex items-center gap-3 ${activeMenu === 'home' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/20' : 'text-gray-400 hover:bg-[#1e2233] hover:text-white'}`}>
             <span>📱</span> เข้าเรียน
           </button>
-          <button onClick={() => setActiveMenu('schedule')} className={`w-full text-left p-3 rounded-lg font-medium transition-all flex items-center gap-3 ${activeMenu === 'schedule' ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20' : 'text-gray-400 hover:bg-[#1e2233] hover:text-white'}`}>
+          <button onClick={() => setActiveMenu('schedule')} className={`w-full text-left p-3 rounded-lg font-medium transition-all flex items-center gap-3 ${activeMenu === 'schedule' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/20' : 'text-gray-400 hover:bg-[#1e2233] hover:text-white'}`}>
             <span>📅</span> ตารางเรียน
           </button>
-          <button onClick={() => setActiveMenu('history')} className={`w-full text-left p-3 rounded-lg font-medium transition-all flex items-center gap-3 ${activeMenu === 'history' ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20' : 'text-gray-400 hover:bg-[#1e2233] hover:text-white'}`}>
+          <button onClick={() => setActiveMenu('history')} className={`w-full text-left p-3 rounded-lg font-medium transition-all flex items-center gap-3 ${activeMenu === 'history' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/20' : 'text-gray-400 hover:bg-[#1e2233] hover:text-white'}`}>
             <span>📊</span> ประวัติเข้าเรียน
           </button>
         </div>
         <div className="mb-4 pt-4 border-t border-gray-800">
-          <p className="text-sm font-semibold text-blue-400">{userData.name}</p>
+          <p className="text-sm font-semibold text-emerald-400">{userData.name}</p>
           <p className="text-xs text-gray-500">{userData.userId}</p>
         </div>
         <button onClick={handleLogout} className="text-gray-500 hover:text-red-400 text-left px-3 py-2 transition-colors text-sm font-medium">ออกจากระบบ</button>
@@ -407,13 +407,13 @@ export default function StudentDashboard() {
                 
                 {isScanning ? (
                   <div className="max-w-sm mx-auto animate-fadeIn text-center mb-8">
-                    <div className="overflow-hidden rounded-2xl border-4 border-blue-500 shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+                    <div className="overflow-hidden rounded-2xl border-4 border-emerald-500 shadow-[0_0_30px_rgba(16,185,129,0.3)]">
                       <Scanner onScan={(result) => handleScanSuccess(result[0].rawValue)} onError={(error) => console.log(error?.message)} />
                     </div>
                     <button onClick={() => setIsScanning(false)} className="mt-6 text-gray-400 hover:text-white underline">ยกเลิกการสแกน</button>
                   </div>
                 ) : (
-                  <button onClick={() => setIsScanning(true)} className="w-full bg-blue-600 py-4 rounded-xl font-bold text-lg hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/20 mb-8">
+                  <button onClick={() => setIsScanning(true)} className="w-full bg-emerald-600 py-4 rounded-xl font-bold text-lg hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-500/20 mb-8">
                     📸 สแกน QR Code
                   </button>
                 )}
@@ -431,7 +431,7 @@ export default function StudentDashboard() {
                     maxLength={6}
                     value={joinCodeInput}
                     onChange={(e) => setJoinCodeInput(e.target.value)}
-                    className="flex-1 bg-[#1e2233] border border-gray-700 rounded-xl px-6 py-4 text-center text-lg font-bold tracking-widest focus:outline-none focus:border-blue-500 text-blue-400" 
+                    className="flex-1 bg-[#1e2233] border border-gray-700 rounded-xl px-6 py-4 text-center text-lg font-bold tracking-widest focus:outline-none focus:border-emerald-500 text-emerald-400" 
                     required 
                   />
                   <button type="submit" className="bg-blue-600 hover:bg-blue-500 px-8 rounded-xl font-bold transition-all">
@@ -448,20 +448,20 @@ export default function StudentDashboard() {
                   </div>
                   <div className="flex-1 p-4 space-y-4 overflow-y-auto">
                     {chatMessages.map((msg, idx) => (
-                      <div key={idx} className={`p-3 rounded-xl max-w-[90%] border border-gray-700 ${msg.sender === userData.name ? 'bg-blue-600/20 border-blue-500/30 ml-auto rounded-tr-none' : msg.sender === 'System' ? 'bg-gray-800 mx-auto text-center' : 'bg-[#1e2233] rounded-tl-none'}`}>
-                        {msg.sender !== 'System' && <p className={`text-xs mb-1 ${msg.sender === userData.name ? 'text-blue-400' : 'text-blue-400'}`}>{msg.sender} <span className="text-gray-500 ml-1">{msg.time}</span></p>}
+                      <div key={idx} className={`p-3 rounded-xl max-w-[90%] border border-gray-700 ${msg.sender === userData.name ? 'bg-emerald-600/20 border-emerald-500/30 ml-auto rounded-tr-none' : msg.sender === 'System' ? 'bg-gray-800 mx-auto text-center' : 'bg-[#1e2233] rounded-tl-none'}`}>
+                        {msg.sender !== 'System' && <p className={`text-xs mb-1 ${msg.sender === userData.name ? 'text-emerald-400' : 'text-blue-400'}`}>{msg.sender} <span className="text-gray-500 ml-1">{msg.time}</span></p>}
                         <p className={`text-sm ${msg.sender === 'System' ? 'text-gray-400 text-xs' : ''}`}>{msg.text}</p>
                       </div>
                     ))}
                   </div>
                   <form onSubmit={handleSendMessage} className="p-4 border-t border-gray-800 bg-[#1e2233] flex gap-2">
-                    <input name="message" placeholder="พิมพ์ข้อความ..." className="flex-1 bg-[#0f1117] border border-gray-700 rounded-xl px-4 text-sm focus:outline-none focus:border-blue-500" required />
-                    <button type="submit" className="px-4 bg-blue-600 hover:bg-blue-500 rounded-xl font-bold">ส่ง</button>
+                    <input name="message" placeholder="พิมพ์ข้อความ..." className="flex-1 bg-[#0f1117] border border-gray-700 rounded-xl px-4 text-sm focus:outline-none focus:border-emerald-500" required />
+                    <button type="submit" className="px-4 bg-emerald-600 hover:bg-emerald-500 rounded-xl font-bold">ส่ง</button>
                   </form>
                 </div>
 
                 <div className="lg:col-span-2 bg-[#161925] border border-gray-800 rounded-3xl p-8 shadow-2xl relative flex flex-col">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400"></div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
                   <div className="flex justify-between items-start mb-8">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
@@ -499,7 +499,7 @@ export default function StudentDashboard() {
               
               <button 
                 onClick={() => setShowAddCourseModal(true)} 
-                className="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-xl font-bold transition-all shadow-lg shadow-blue-500/20"
+                className="bg-emerald-600 hover:bg-emerald-500 px-6 py-3 rounded-xl font-bold transition-all shadow-lg shadow-emerald-500/20"
               >
                 + เพิ่มวิชา
               </button>
@@ -512,13 +512,13 @@ export default function StudentDashboard() {
                 
                 return (
                   <div key={day} className="bg-[#161925] border border-gray-800 rounded-3xl p-5 shadow-xl flex flex-col">
-                    <h3 className="text-lg font-bold text-blue-400 mb-4 border-b border-gray-700 pb-2 capitalize">{day}</h3>
+                    <h3 className="text-lg font-bold text-emerald-400 mb-4 border-b border-gray-700 pb-2 capitalize">{day}</h3>
                     
                     {daysSchedule.length === 0 ? (
                       <p className="text-gray-600 text-sm italic text-center py-4">ไม่มีวิชาเรียน</p>
                     ) : (
                       daysSchedule.map((item: any) => (
-                        <div key={item.id} className="bg-[#1e2233] p-4 rounded-xl border border-gray-700 mb-3 hover:border-blue-500/50 transition-colors">
+                        <div key={item.id} className="bg-[#1e2233] p-4 rounded-xl border border-gray-700 mb-3 hover:border-emerald-500/50 transition-colors">
                           <div className="flex justify-between items-start mb-2">
                             <span className="font-bold text-white">{item.code}</span>
                             {item.time && <span className="bg-blue-500/20 text-blue-400 text-[10px] px-2 py-1 rounded-lg">{item.time}</span>}
@@ -551,7 +551,7 @@ export default function StudentDashboard() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                <div className="bg-[#161925] border border-gray-800 p-6 rounded-2xl text-center shadow-lg"><p className="text-gray-400 text-sm mb-1">เข้าเรียนทั้งหมด</p><p className="text-3xl font-bold text-white">{totalClasses} <span className="text-sm font-normal text-gray-500">คาบ</span></p></div>
-               <div className="bg-[#161925] border border-blue-500/30 p-6 rounded-2xl text-center shadow-lg bg-blue-500/5"><p className="text-blue-500/80 text-sm mb-1">อยู่จนจบ (น้ำเงิน)</p><p className="text-3xl font-bold text-blue-400">{successClasses} <span className="text-sm font-normal text-blue-500/50">คาบ</span></p></div>
+               <div className="bg-[#161925] border border-emerald-500/30 p-6 rounded-2xl text-center shadow-lg bg-emerald-500/5"><p className="text-emerald-500/80 text-sm mb-1">อยู่จนจบ (เขียว)</p><p className="text-3xl font-bold text-emerald-400">{successClasses} <span className="text-sm font-normal text-emerald-500/50">คาบ</span></p></div>
                <div className="bg-[#161925] border border-yellow-500/30 p-6 rounded-2xl text-center shadow-lg bg-yellow-500/5"><p className="text-yellow-500/80 text-sm mb-1">แอบปิดแอป (เหลือง)</p><p className="text-3xl font-bold text-yellow-400">{warningClasses} <span className="text-sm font-normal text-yellow-500/50">คาบ</span></p></div>
                <div className="bg-[#161925] border border-red-500/30 p-6 rounded-2xl text-center shadow-lg bg-red-500/5"><p className="text-red-500/80 text-sm mb-1">ขาดเรียน (แดง)</p><p className="text-3xl font-bold text-red-400">{errorClasses} <span className="text-sm font-normal text-red-500/50">คาบ</span></p></div>
             </div>
@@ -562,7 +562,7 @@ export default function StudentDashboard() {
               <div className="flex flex-col">
                  <div className="flex justify-between items-center mb-4">
                     <button onClick={() => { setCalendarDate(new Date(currentYear, currentMonth - 1, 1)); setSelectedDate(null); }} className="text-gray-400 hover:text-white bg-[#1e2233] px-3 py-1 rounded-lg transition-colors">&lt;</button>
-                    <h3 className="font-bold text-lg text-blue-400">{monthNamesThai[currentMonth]} {currentYear}</h3>
+                    <h3 className="font-bold text-lg text-emerald-400">{monthNamesThai[currentMonth]} {currentYear}</h3>
                     <button onClick={() => { setCalendarDate(new Date(currentYear, currentMonth + 1, 1)); setSelectedDate(null); }} className="text-gray-400 hover:text-white bg-[#1e2233] px-3 py-1 rounded-lg transition-colors">&gt;</button>
                  </div>
                  
@@ -584,7 +584,7 @@ export default function StudentDashboard() {
                           const hasWarning = dayRecords.some(r => r.type === 'warning');
                           if (hasError) bgColor = "bg-red-500/20 text-red-400 border border-red-500/30 rounded-lg";
                           else if (hasWarning) bgColor = "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 rounded-lg";
-                          else bgColor = "bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-lg";
+                          else bgColor = "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-lg";
                        }
 
                        const isSelected = selectedDate === day;
@@ -606,7 +606,7 @@ export default function StudentDashboard() {
                  </div>
                  
                  <div className="mt-6 space-y-3 text-xs text-gray-400 border-t border-gray-800 pt-4">
-                    <div className="flex items-center gap-3"><span className="w-3 h-3 rounded-full bg-blue-500"></span> เข้าเรียนปกติ / อยู่จนจบ</div>
+                    <div className="flex items-center gap-3"><span className="w-3 h-3 rounded-full bg-emerald-500"></span> เข้าเรียนปกติ / อยู่จนจบ</div>
                     <div className="flex items-center gap-3"><span className="w-3 h-3 rounded-full bg-yellow-500"></span> แอบปิดแอป (สัญญาณขาดหาย)</div>
                  </div>
               </div>
@@ -640,7 +640,7 @@ export default function StudentDashboard() {
                                    </td>
                                    <td className="p-4 text-center text-gray-300 font-mono text-sm">{record.time}</td>
                                    <td className="p-4 text-center">
-                                      {record.type === 'success' && <span className="bg-blue-500/10 text-blue-400 border border-blue-500/30 px-3 py-1 rounded-lg text-xs font-bold">✅ {record.status}</span>}
+                                      {record.type === 'success' && <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-lg text-xs font-bold">✅ {record.status}</span>}
                                       {record.type === 'warning' && <span className="bg-yellow-500/10 text-yellow-400 border border-yellow-500/30 px-3 py-1 rounded-lg text-xs font-bold">⚠️ {record.status}</span>}
                                       {record.type === 'error' && <span className="bg-red-500/10 text-red-400 border border-red-500/30 px-3 py-1 rounded-lg text-xs font-bold">🚫 {record.status}</span>}
                                    </td>

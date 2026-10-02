@@ -171,7 +171,7 @@ export default function TeacherDashboard() {
       {/* Navbar */}
       <nav className="bg-[#161925] border-b border-gray-800 px-8 py-4 flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-blue-400">ระบบจัดการห้องเรียน (อาจารย์)</h1>
+          <h1 className="text-2xl font-bold text-emerald-400">ระบบจัดการห้องเรียน (อาจารย์)</h1>
           <p className="text-sm text-gray-500">ยินดีต้อนรับ, {userData?.name}</p>
         </div>
         <button onClick={handleLogout} className="bg-red-500/10 hover:bg-red-500/20 text-red-500 px-4 py-2 rounded-lg font-medium transition-colors">
@@ -196,7 +196,7 @@ export default function TeacherDashboard() {
                     type="text" 
                     value={courseCode} 
                     onChange={(e) => setCourseCode(e.target.value)}
-                    className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" 
+                    className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500" 
                   />
                 </div>
                 <div>
@@ -205,21 +205,21 @@ export default function TeacherDashboard() {
                     type="text" 
                     value={courseName} 
                     onChange={(e) => setCourseName(e.target.value)}
-                    className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" 
+                    className="w-full bg-[#1e2233] border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500" 
                   />
                 </div>
                 
                 <button 
                   onClick={handleStartClass}
-                  className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 transition-all mt-4"
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-emerald-500/20 transition-all mt-4"
                 >
                   ▶️ เปิดคลาสเรียน
                 </button>
               </div>
             ) : (
               <div className="text-center space-y-6">
-                <div className="bg-blue-500/10 border border-blue-500/30 p-4 rounded-2xl">
-                  <p className="text-blue-400 text-sm mb-1">สถานะ: กำลังสอน</p>
+                <div className="bg-emerald-500/10 border border-emerald-500/30 p-4 rounded-2xl">
+                  <p className="text-emerald-400 text-sm mb-1">สถานะ: กำลังสอน</p>
                   <p className="text-xl font-bold">{courseCode} - {courseName}</p>
                 </div>
 
@@ -229,7 +229,7 @@ export default function TeacherDashboard() {
                 
                 <div>
                   <p className="text-gray-400 text-sm mb-2">หรือให้นักศึกษากรอกรหัสนี้</p>
-                  <p className="text-4xl font-black tracking-widest text-blue-400">{roomCode}</p>
+                  <p className="text-4xl font-black tracking-widest text-emerald-400">{roomCode}</p>
                 </div>
 
                 <button 
@@ -251,7 +251,7 @@ export default function TeacherDashboard() {
               <div className="flex-1 p-4 overflow-y-auto space-y-3">
                 {chatMessages.map((msg, idx) => (
                   <div key={idx} className={`p-3 rounded-xl max-w-[90%] border border-gray-700 ${msg.sender === "อาจารย์" ? 'bg-blue-600/20 border-blue-500/30 ml-auto rounded-tr-none' : msg.sender === 'System' ? 'bg-gray-800 mx-auto text-center' : 'bg-[#1e2233] rounded-tl-none'}`}>
-                    {msg.sender !== 'System' && <p className={`text-xs mb-1 ${msg.sender === "อาจารย์" ? 'text-blue-400' : 'text-blue-400'}`}>{msg.sender} <span className="text-gray-500 ml-1">{msg.time}</span></p>}
+                    {msg.sender !== 'System' && <p className={`text-xs mb-1 ${msg.sender === "อาจารย์" ? 'text-blue-400' : 'text-emerald-400'}`}>{msg.sender} <span className="text-gray-500 ml-1">{msg.time}</span></p>}
                     <p className={`text-sm ${msg.sender === 'System' ? 'text-gray-400 text-xs' : ''}`}>{msg.text}</p>
                   </div>
                 ))}
@@ -262,9 +262,9 @@ export default function TeacherDashboard() {
                   value={chatInput}
                   onChange={(e) => setChatInput(e.target.value)}
                   placeholder="พิมพ์ประกาศ..." 
-                  className="flex-1 bg-[#0f1117] border border-gray-700 rounded-xl px-4 py-2 focus:outline-none focus:border-blue-500 text-sm" 
+                  className="flex-1 bg-[#0f1117] border border-gray-700 rounded-xl px-4 py-2 focus:outline-none focus:border-emerald-500 text-sm" 
                 />
-                <button type="submit" className="bg-blue-600 px-4 py-2 rounded-xl font-bold">ส่ง</button>
+                <button type="submit" className="bg-emerald-600 px-4 py-2 rounded-xl font-bold">ส่ง</button>
               </form>
             </div>
           )}
@@ -279,8 +279,8 @@ export default function TeacherDashboard() {
                 <h2 className="text-2xl font-bold">นักศึกษาที่เข้าร่วม</h2>
                 <p className="text-gray-400 text-sm mt-1">อัปเดตแบบ Real-time</p>
               </div>
-              <div className="bg-blue-500/10 border border-blue-500/30 px-4 py-2 rounded-xl">
-                <span className="text-2xl font-black text-blue-400">{currentStudents.length}</span>
+              <div className="bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-xl">
+                <span className="text-2xl font-black text-emerald-400">{currentStudents.length}</span>
                 <span className="text-gray-400 ml-2">คน</span>
               </div>
             </div>
@@ -303,7 +303,7 @@ export default function TeacherDashboard() {
                         <div className="flex items-center gap-4">
                           <div className="relative">
                             <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-xl">👤</div>
-                            <div className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-[#1e2233] ${isOffline ? 'bg-yellow-500' : 'bg-blue-500'}`}></div>
+                            <div className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-[#1e2233] ${isOffline ? 'bg-yellow-500' : 'bg-emerald-500'}`}></div>
                           </div>
                           <div>
                             <h4 className="font-bold text-white">{student.name}</h4>
